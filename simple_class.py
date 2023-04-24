@@ -3,8 +3,8 @@ def not_function():
 
 
 class Car():
-    def input_label(self, label: str):
-        self.label = label
+    # def input_label(self, label: str):
+    #     self.label = label
 
     def __init__(self, label: str, volume: int):
         self.label = label
@@ -28,7 +28,7 @@ result = not_function()
 car1 = Car('porsche', 3)
 car2 = Car('ferrari', 4)
 
-car1.input_label('porsche')
+# car1.input_label('porsche')
 # car2.input_label('ferrari')
 
 # car1.label = 'porsche'
