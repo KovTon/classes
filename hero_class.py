@@ -11,6 +11,6 @@ class Hero():
         pass
 
 
-bard = Hero('Diablo', 'bard', 'undead', 100500, 70, 0)
+hero = Hero('Diablo', 'bard', 'undead', 100500, 70, 0)
 
-print(tank.name)
+print(hero.name)
