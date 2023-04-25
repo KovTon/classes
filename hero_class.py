@@ -1,16 +1,68 @@
 class Hero():
-    def __init__(self, name: str, character_class: str, race: str, HP: int, AG: int, money_bag: int):
+    def __init__(self,
+                 name: str,
+                 character_class: str,
+                 race: str,
+                 hp: int,
+                 ag: int,
+                 dmg: int,
+                 armor: int,
+                 money_bag: int):
+
         self.name = name
         self.character_class = character_class
         self.race = race
-        self.HP = HP
-        self.AG = AG
+        self.hp = hp
+        self.ag = ag
         self.money_bag = money_bag
-        
-    def movement():
-        pass
+        self.dmg = dmg
+        self.armor = armor
+
+    def get_dmg_and_defended(self, hp, armor, amount_of_dmg):
+        if self.ag == 0:
+            print("can't defense")
+            self.hp = hp - amount_of_dmg
+        self.hp = hp - armor - amount_of_dmg
+        self.ag -= 50
 
 
-hero = Hero('Diablo', 'bard', 'undead', 100500, 70, 0)
+class Enemy():
+    def __init__(self,
+                 name: str,
+                 character_class: str,
+                 race: str,
+                 hp: int,
+                 ag: int,
+                 dmg: int,
+                 armor: int,
+                 money_bag: int):
 
-print(hero.name)
+        self.name = name
+        self.character_class = character_class
+        self.race = race
+        self.hp = hp
+        self.ag = ag
+        self.money_bag = money_bag
+        self.dmg = dmg
+        self.armor = armor
+
+
+# def hero_get_dmg(actor_1, actor_2):
+#     actor_1 = 
+#     return hero.hp = actor_1 - actor_2
+
+hero = Hero('Diablo', 'bard', 'undead', 100500, 150, 10000, 200, 0)
+enemy = Enemy('Nameless', 'warrior', 'skeleton', 900000, 40, 500, 20, 25)
+print(hero.name, hero.character_class)
+print(hero.hp - enemy.dmg)
+
+# а если через функцию 'def hero_get_dmg_and_defended'?
+
+hero.get_dmg_and_defended(hero.hp, hero.armor, enemy.dmg)
+print(hero.name, hero.hp, hero.ag)
+hero.get_dmg_and_defended(hero.hp, hero.armor, enemy.dmg)
+print(hero.name, hero.hp, hero.ag)
+hero.get_dmg_and_defended(hero.hp, hero.armor, enemy.dmg)
+print(hero.name, hero.hp, hero.ag)
+hero.get_dmg_and_defended(hero.hp, hero.armor, enemy.dmg)
+print(hero.name, hero.hp, hero.ag)
