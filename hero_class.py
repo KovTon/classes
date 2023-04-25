@@ -19,6 +19,9 @@ class Hero():
         self.armor = armor
 
     def get_dmg_and_defended(self, hp, armor, amount_of_dmg):
+        if self.ag <= -200:
+            print(f"{self.name} can't defense, he is in agony")
+            self.hp = hp - amount_of_dmg * 2
         if self.ag <= 0:
             print(f"{self.name} can't defense")
             self.hp = hp - amount_of_dmg
@@ -54,7 +57,7 @@ class Enemy():
 
 
 # def hero_get_dmg(actor_1, actor_2):
-#     actor_1 = 
+#     actor_1 =
 #     return hero.hp = actor_1 - actor_2
 
 hero = Hero('Diablo', 'bard', 'undead', 100500, 150, 10000, 200, 0)
@@ -76,9 +79,16 @@ print(hero.name, hero.hp, hero.ag)
 hero.get_dmg_and_defended(hero.hp, hero.armor, enemy.dmg)
 print(hero.name, hero.hp, hero.ag)
 hero.get_dmg_and_defended(hero.hp, hero.armor, enemy.dmg)
+print(hero.name, hero.hp, hero.ag)
+hero.get_dmg_and_defended(hero.hp, hero.armor, enemy.dmg)
+print(hero.name, hero.hp, hero.ag)
+hero.get_dmg_and_defended(hero.hp, hero.armor, enemy.dmg)
+print(hero.name, hero.hp, hero.ag)
+hero.get_dmg_and_defended(hero.hp, hero.armor, enemy.dmg)
+print(hero.name, hero.hp, hero.ag)
+hero.get_dmg_and_defended(hero.hp, hero.armor, enemy.dmg)
+print(hero.name, hero.hp, hero.ag)
+hero.get_dmg_and_defended(hero.hp, hero.armor, enemy.dmg)
 
-#есть проблема. Enemy наносит урон по 700, а должен по 500.
-
+print('2++++++++++++++++++++++++++++++2')
 print(hero.display_hero_info())
-
-# Изменил '-' на '+' в функции. Стал не по 700, а по 300. 
