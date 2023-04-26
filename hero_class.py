@@ -52,5 +52,7 @@ class Hero():
               f"Здоровье: {self.hp}\n"
               f"Урон: {self.dmg}\n"
               f"Выносливость: {self.ag}\n")
-    def 
 
+
+if __name__ == '__main__': 
+     main()
