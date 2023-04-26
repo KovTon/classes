@@ -54,6 +54,7 @@ class Hero():
               f"Выносливость: {self.ag}\n")
 
 
+<<<<<<< HEAD
 def main():
     hero = Hero('Diablo', 'bard', 'undead', 100500, 150, 10000, 200)
     oreh = Hero('Nameless', 'warrior', 'skeleton', 900000, 40, 500, 20)
@@ -85,3 +86,7 @@ if __name__ == '__main__':
     main()
 
 main()
+=======
+if __name__ == '__main__': 
+     main()
+>>>>>>> a12d7219c9fe433d6849d5000c3801e0cd933287
