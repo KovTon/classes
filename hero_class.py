@@ -40,7 +40,7 @@ class Hero():
         self.ag -= 10
 
     def defense_from(self, amount_of_enemy_dmg):
-        self.hp = self.hp + self.armor - amount_of_enemy_dmg
+        self.hp = self.hp - amount_of_enemy_dmg * 0
         self.ag -= 50
 
     def attack(self):
