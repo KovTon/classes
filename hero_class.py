@@ -17,6 +17,7 @@ class Hero():
         self.money_bag = 0
         self.dmg = dmg
         self.armor = armor
+        self.is_defense = False
         self.x = 0
         self.y = 0
 
@@ -35,13 +36,20 @@ class Hero():
     def get_coin(self, coin):
         self.money_bag += coin
 
-    def get_dmg_from(self, amount_of_enemy_dmg):
+    def get_dmg(self, amount_of_enemy_dmg):
+        if self.is_defense:
+            amount_of_enemy_dmg -= self.armor
+            agility = 50
+        else:
+            agility = 10
         self.hp -= amount_of_enemy_dmg
-        self.ag -= 10
+        self.ag -= agility
 
-    def defense_from(self, amount_of_enemy_dmg):
-        self.hp = self.hp - amount_of_enemy_dmg * 0
-        self.ag -= 50
+    def defense(self):
+        self.is_defense = True
+
+    def stop_defense(self):
+        self.is_defense = False
 
     def attack(self):
         self.ag -= 100
@@ -61,21 +69,21 @@ def main():
     print('\n1Round_++++++++++++++++++++++++++++++1')
     print(oreh.name, oreh.hp, oreh.ag)
     print(hero.name, hero.hp, hero.ag)
-    oreh.get_dmg_from(hero.attack())
-    oreh.defense_from(hero.dmg)
+    oreh.get_dmg(hero.attack())
+    oreh.defense()
     oreh.get_coin(10)
 
     print('\n2Round_++++++++++++++++++++++++++++++2')
     print(oreh.name, oreh.hp, oreh.ag)
     print(hero.name, hero.hp, hero.ag)
-    oreh.get_dmg_from(hero.attack())
-    oreh.defense_from(hero.dmg)
+    oreh.get_dmg(hero.attack())
+    oreh.defense()
 
     print('\n3Round_++++++++++++++++++++++++++++++3')
     print(oreh.name, oreh.hp, oreh.ag)
     print(hero.name, hero.hp, hero.ag)
-    hero.get_dmg_from(hero.attack())
-    oreh.get_dmg_from(oreh.attack())
+    hero.get_dmg(hero.attack())
+    oreh.get_dmg(oreh.attack())
 
     print(oreh.name, oreh.hp, oreh.ag)
     print(hero.name, hero.hp, hero.ag)
@@ -83,4 +91,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
