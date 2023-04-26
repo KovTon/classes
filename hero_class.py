@@ -54,27 +54,34 @@ class Hero():
               f"Выносливость: {self.ag}\n")
 
 
-hero = Hero('Diablo', 'bard', 'undead', 100500, 150, 10000, 200)
-oreh = Hero('Nameless', 'warrior', 'skeleton', 900000, 40, 500, 20)
+def main():
+    hero = Hero('Diablo', 'bard', 'undead', 100500, 150, 10000, 200)
+    oreh = Hero('Nameless', 'warrior', 'skeleton', 900000, 40, 500, 20)
 
-print('\n1Round_++++++++++++++++++++++++++++++1')
-print(oreh.name, oreh.hp, oreh.ag)
-print(hero.name, hero.hp, hero.ag)
-oreh.get_dmg_from(hero.attack())
-oreh.defense_from(hero.dmg)
-oreh.get_coin(10)
+    print('\n1Round_++++++++++++++++++++++++++++++1')
+    print(oreh.name, oreh.hp, oreh.ag)
+    print(hero.name, hero.hp, hero.ag)
+    oreh.get_dmg_from(hero.attack())
+    oreh.defense_from(hero.dmg)
+    oreh.get_coin(10)
 
-print('\n2Round_++++++++++++++++++++++++++++++2')
-print(oreh.name, oreh.hp, oreh.ag)
-print(hero.name, hero.hp, hero.ag)
-oreh.get_dmg_from(hero.attack())
-oreh.defense_from(hero.dmg)
+    print('\n2Round_++++++++++++++++++++++++++++++2')
+    print(oreh.name, oreh.hp, oreh.ag)
+    print(hero.name, hero.hp, hero.ag)
+    oreh.get_dmg_from(hero.attack())
+    oreh.defense_from(hero.dmg)
 
-print('\n3Round_++++++++++++++++++++++++++++++3')
-print(oreh.name, oreh.hp, oreh.ag)
-print(hero.name, hero.hp, hero.ag)
-hero.get_dmg_from(hero.attack())
-oreh.get_dmg_from(oreh.attack())
+    print('\n3Round_++++++++++++++++++++++++++++++3')
+    print(oreh.name, oreh.hp, oreh.ag)
+    print(hero.name, hero.hp, hero.ag)
+    hero.get_dmg_from(hero.attack())
+    oreh.get_dmg_from(oreh.attack())
 
-print(oreh.name, oreh.hp, oreh.ag)
-print(hero.name, hero.hp, hero.ag)
+    print(oreh.name, oreh.hp, oreh.ag)
+    print(hero.name, hero.hp, hero.ag)
+
+
+if __name__ == '__main__':
+    main()
+
+main()
