@@ -42,6 +42,7 @@ class ElectricCar(Car):
     def __init__(self, make, model, year):
         """Инициализирует атрибуты класса-родителя."""
         super().__init__(make, model, year)
+        # [ ] на стр.172 всратый indentation?
         self.battery = Battery()
 
     def describe_batter(self):
@@ -64,15 +65,29 @@ class Battery():
         """Выводит информацию о мощности аккумулятора."""
         return f"This car has a {self.battery_size} -kWh battery."
 
+    # def get_range(self):
+    #     #   [ ] не получается нормально вывести значение. выдает 0.
+    #     """Выводит приблизительный запас хода для аккумулятора."""
+    #     range = 0
+    #     # [ ] а можно без создания переменной range до условной конструкции,
+    #     # но с помощью хитрого некоего format?
+    #     message = f"This car can go approximately {range} miles on a full charge."
+    #     if self.battery_size == 70:
+    #         range = 240
+    #     elif self.battery_size == 85:
+    #         range = 270 
+    #     return message
+
     def get_range(self):
         """Выводит приблизительный запас хода для аккумулятора."""
+        # range = 0
         if self.battery_size == 70:
             range = 240
         elif self.battery_size == 85:
             range = 270
-            message = "This car can go approximately " + str(range)
-            message += " miles on a full charge."
-            print(message)
+        # [ ]Прога не понимает что переменная будет создана?
+        # Той часть которая подчеркивает, не известно компилируещей???
+        return f"This car can go approximately {range} miles on a full charge."
 
 
 my_new_car = Car('audi', 'a4', 2016)
@@ -87,7 +102,12 @@ my_new_car.read_odometer()
 
 tesla_hoover_X5000 = ElectricCar('tesla', 'model s', 2016)
 print(tesla_hoover_X5000.get_descriptive_name())
+# [ ] не показывает значение.Понял. Потому что метод/функцию battery не трогал.
+# А как правильно сказать-то предыдущее предложение?
 print(tesla_hoover_X5000.describe_batter())
 print(tesla_hoover_X5000.fill_gas_tank())
 print(tesla_hoover_X5000.battery.describe_battery())
-
+# [ ] выдает неправильные значения у моего варианта кода.
+print(tesla_hoover_X5000.battery.get_range())
+batarika = Battery(100)
+print(tesla_hoover_X5000.battery.get_range())
